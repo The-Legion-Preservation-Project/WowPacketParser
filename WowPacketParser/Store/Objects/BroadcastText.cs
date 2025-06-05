@@ -52,12 +52,12 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("VoiceOverPriorityID", TargetedDatabaseFlag.SinceShadowlands | TargetedDatabaseFlag.WotlkClassic)]
         public uint? VoiceOverPriorityID;
 
-        [DBFieldName("SoundEntriesID1", TargetedDatabaseFlag.TillBattleForAzeroth)]
-        [DBFieldName("SoundKitID1", TargetedDatabaseFlag.SinceShadowlands | TargetedDatabaseFlag.WotlkClassic)]
+        [DBFieldName("SoundEntriesID1", TargetedDatabaseFlag.TillWarlordsOfDraenor)]
+        [DBFieldName("SoundKitID1", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.WotlkClassic)]
         public uint? SoundEntriesID1;
 
-        [DBFieldName("SoundEntriesID2", TargetedDatabaseFlag.TillBattleForAzeroth)]
-        [DBFieldName("SoundKitID2", TargetedDatabaseFlag.SinceShadowlands | TargetedDatabaseFlag.WotlkClassic)]
+        [DBFieldName("SoundEntriesID2", TargetedDatabaseFlag.TillWarlordsOfDraenor)]
+        [DBFieldName("SoundKitID2", TargetedDatabaseFlag.SinceLegion | TargetedDatabaseFlag.WotlkClassic)]
         public uint? SoundEntriesID2;
 
         [DBFieldName("EmoteID1")]

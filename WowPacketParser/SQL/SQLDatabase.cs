@@ -126,7 +126,7 @@ namespace WowPacketParser.SQL
         /// </summary>
         private static void LoadBroadcastText()
         {
-            var soundFieldName = Settings.TargetedDatabase >= TargetedDatabase.Shadowlands ? "Kit" : "Entries";
+            var soundFieldName = Settings.TargetedDatabase >= TargetedDatabase.Legion ? "Kit" : "Entries";
             string query =
                 $"SELECT ID, Text, Text1, EmoteID1, EmoteID2, EmoteID3, EmoteDelay1, EmoteDelay2, EmoteDelay3, EmotesID, LanguageID, Flags, ConditionID, Sound{soundFieldName}ID1, Sound{soundFieldName}ID2 " +
                 $"FROM {Settings.HotfixesDatabase}.broadcast_text;";
@@ -189,7 +189,7 @@ namespace WowPacketParser.SQL
                         }
                         else
                         {
-                            broadcastText.ConditionID = Convert.ToByte(reader["ConditionID"]);
+                            broadcastText.ConditionID = Convert.ToInt32(reader["ConditionID"]);
                             broadcastText.SoundKitID = new uint[2];
                             broadcastText.SoundKitID[0] = Convert.ToUInt32(reader[$"Sound{soundFieldName}ID1"]);
                             broadcastText.SoundKitID[1] = Convert.ToUInt32(reader[$"Sound{soundFieldName}ID2"]);
