@@ -5,8 +5,8 @@ using WowPacketParser.SQL;
 
 namespace WowPacketParser.Store.Objects
 {
-    [DBTableName("creature_template_scaling", TargetedDatabaseFlag.TillShadowlands)]
-    [DBTableName("creature_template_difficulty", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+    [DBTableName("creature_template_scaling", TargetedDatabaseFlag.TillShadowlandsNoLegion)]
+    [DBTableName("creature_template_difficulty", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
     public sealed record CreatureTemplateDifficultyWDB : IDataModel
     {
         [DBFieldName("Entry", true)]
@@ -15,22 +15,22 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("DifficultyID", true)]
         public uint? DifficultyID;
 
-        [DBFieldName("HealthScalingExpansion", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("HealthScalingExpansion", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public ClientType? HealthScalingExpansion;
 
-        [DBFieldName("HealthModifier", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("HealthModifier", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public float? HealthModifier;
 
-        [DBFieldName("ManaModifier", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("ManaModifier", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public float? ManaModifier;
 
         [DBFieldName("CreatureDifficultyID", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public int? CreatureDifficultyID;
 
-        [DBFieldName("TypeFlags", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("TypeFlags", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureTypeFlag? TypeFlags;
 
-        [DBFieldName("TypeFlags2", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("TypeFlags2", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public uint? TypeFlags2;
 
         public bool WDBEqualsSkipDifficultySkipHealthScalingExpansion(CreatureTemplateDifficultyWDB rhs)
@@ -47,8 +47,8 @@ namespace WowPacketParser.Store.Objects
         }
     }
 
-    [DBTableName("creature_template_scaling", TargetedDatabaseFlag.TillShadowlands)]
-    [DBTableName("creature_template_difficulty", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+    [DBTableName("creature_template_scaling", TargetedDatabaseFlag.TillShadowlandsNoLegion)]
+    [DBTableName("creature_template_difficulty", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
     public sealed record CreatureTemplateDifficulty : IDataModel
     {
         [DBFieldName("Entry", true)]
@@ -69,38 +69,38 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("LevelScalingDeltaMax", TargetedDatabaseFlag.AnyRetail)]
         public int? LevelScalingDeltaMax;
 
-        [DBFieldName("MinLevel", TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("MinLevel", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public int? MinLevel;
 
-        [DBFieldName("MaxLevel", TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("MaxLevel", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public int? MaxLevel;
 
-        [DBFieldName("SandboxScalingID", TargetedDatabaseFlag.Legion)]
+        //[DBFieldName("SandboxScalingID", TargetedDatabaseFlag.Legion)]
         [DBFieldName("ContentTuningID", TargetedDatabaseFlag.SinceBattleForAzeroth)]
         public int? ContentTuningID;
 
-        [DBFieldName("StaticFlags1", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags1", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags? StaticFlags1 = 0;
 
-        [DBFieldName("StaticFlags2", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags2", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags2? StaticFlags2 = 0;
 
-        [DBFieldName("StaticFlags3", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags3", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags3? StaticFlags3 = 0;
 
-        [DBFieldName("StaticFlags4", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags4", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags4? StaticFlags4 = 0;
 
-        [DBFieldName("StaticFlags5", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags5", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags5? StaticFlags5 = 0;
 
-        [DBFieldName("StaticFlags6", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags6", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags6? StaticFlags6 = 0;
 
-        [DBFieldName("StaticFlags7", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags7", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags7? StaticFlags7 = 0;
 
-        [DBFieldName("StaticFlags8", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
+        [DBFieldName("StaticFlags8", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.WotlkClassic | TargetedDatabaseFlag.CataClassic)]
         public CreatureStaticFlags8? StaticFlags8 = 0;
 
         [DBFieldName("VerifiedBuild")]

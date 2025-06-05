@@ -211,6 +211,8 @@ namespace WowPacketParser.SQL.Builders
                         {
                             Entry = unit.Key.GetEntry(),
                             DifficultyID = npc.DifficultyID,
+                            MinLevel = difficultyLevels[(unit.Key.GetEntry(), npc.DifficultyID ?? 0)].Item1,
+                            MaxLevel = difficultyLevels[(unit.Key.GetEntry(), npc.DifficultyID ?? 0)].Item2,
                             LevelScalingMin = scalingMinLevel,
                             LevelScalingMax = scalingMaxLevel,
                             LevelScalingDeltaMin = scalingdeltalevels[unit.Key.GetEntry()].Item1,
