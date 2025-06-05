@@ -55,10 +55,10 @@ namespace WowPacketParser.Misc
                         if (DBC.DBC.Map.ContainsKey(entry))
                             name = DBC.DBC.Map[entry].MapName;
                         break;
-                    case StoreNameType.Spell:
-                        if (DBC.DBC.SpellName.ContainsKey(entry))
-                            name = DBC.DBC.SpellName[entry].Name;
-                        break;
+                    // case StoreNameType.Spell:
+                    //     if (DBC.DBC.SpellName.ContainsKey(entry))
+                    //         name = DBC.DBC.SpellName[entry].Name;
+                    //     break;
                     case StoreNameType.Zone:
                         if (DBC.DBC.Zones.ContainsKey((uint)entry))
                             name = DBC.DBC.Zones[(uint)entry];

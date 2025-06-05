@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using WowPacketParser.DBC.Structures.TheWarWithin;
+using WowPacketParser.DBC.Structures.Legion;
 using WowPacketParser.Misc;
 
 namespace WowPacketParser.DBC
@@ -34,7 +34,7 @@ namespace WowPacketParser.DBC
         public static Storage<PhaseEntry> Phase { get; set; }
         public static Storage<PhaseXPhaseGroupEntry> PhaseXPhaseGroup { get; set; }
         public static Storage<SpellEffectEntry> SpellEffect { get; set; }
-        public static Storage<SpellNameEntry> SpellName { get; set; }
+        //public static Storage<SpellNameEntry> SpellName { get; set; }
 
         private static string GetDBCPath()
         {

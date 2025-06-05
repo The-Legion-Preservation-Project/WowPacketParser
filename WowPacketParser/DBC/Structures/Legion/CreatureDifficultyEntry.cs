@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using DBFileReaderLib.Attributes;
 
 namespace WowPacketParser.DBC.Structures.Legion
 {
@@ -6,6 +7,8 @@ namespace WowPacketParser.DBC.Structures.Legion
 
     public sealed class CreatureDifficultyEntry
     {
+        [Index(true)]
+        public uint ID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 7)]
         public int[] Flags;
         public ushort FactionTemplateID;

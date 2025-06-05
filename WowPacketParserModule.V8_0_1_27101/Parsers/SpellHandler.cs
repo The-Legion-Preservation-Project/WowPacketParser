@@ -67,7 +67,7 @@ namespace WowPacketParserModule.V8_0_1_27101.Parsers
                     if (DBC.SpellEffectStores.ContainsKey(tuple))
                     {
                         var effect = DBC.SpellEffectStores[tuple];
-                        var isValidDBTarget = (short[] implicitTargets, Targets type) =>
+                        var isValidDBTarget = (uint[] implicitTargets, Targets type) =>
                         {
                             foreach (var implicitTarget in implicitTargets)
                                 if ((Targets)implicitTarget == type)

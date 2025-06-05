@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
-using WowPacketParser.DBC.Structures.TheWarWithin;
+using WowPacketParser.DBC.Structures.Legion;
 using WowPacketParser.Enums;
 using WowPacketParser.Misc;
 using WowPacketParser.Store.Objects;
@@ -177,8 +177,8 @@ namespace WowPacketParser.SQL
                         broadcastText.EmoteDelay[1] = Convert.ToUInt16(reader["EmoteDelay2"]);
                         broadcastText.EmoteDelay[2] = Convert.ToUInt16(reader["EmoteDelay3"]);
                         broadcastText.EmotesID = Convert.ToUInt16(reader["EmotesID"]);
-                        broadcastText.LanguageID = Convert.ToInt32(reader["LanguageID"]);
-                        broadcastText.Flags = Convert.ToUInt16(reader["Flags"]);
+                        broadcastText.LanguageID = Convert.ToByte(reader["LanguageID"]);
+                        broadcastText.Flags = Convert.ToByte(reader["Flags"]);
 
                         if (Settings.TargetedDatabase == TargetedDatabase.WrathOfTheLichKing || Settings.TargetedDatabase == TargetedDatabase.Cataclysm)
                         {
@@ -189,7 +189,7 @@ namespace WowPacketParser.SQL
                         }
                         else
                         {
-                            broadcastText.ConditionID = Convert.ToInt32(reader["ConditionID"]);
+                            broadcastText.ConditionID = Convert.ToByte(reader["ConditionID"]);
                             broadcastText.SoundKitID = new uint[2];
                             broadcastText.SoundKitID[0] = Convert.ToUInt32(reader[$"Sound{soundFieldName}ID1"]);
                             broadcastText.SoundKitID[1] = Convert.ToUInt32(reader[$"Sound{soundFieldName}ID2"]);

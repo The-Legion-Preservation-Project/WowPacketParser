@@ -2,13 +2,11 @@
 
 namespace WowPacketParser.DBC.Structures.Legion
 {
-    [DBFile("PhaseXPhaseGroup")]
-
-    public sealed class PhaseXPhaseGroupEntry
+    [DBFile("Phase")]
+    public sealed class PhaseEntry
     {
         [Index(true)]
         public uint ID;
-        public ushort PhaseID;
-        public ushort PhaseGroupID;
+        public short Flags;
     }
 }

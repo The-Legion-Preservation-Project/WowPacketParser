@@ -6,7 +6,7 @@ namespace WowPacketParser.DBC.Structures.Legion
     public sealed class FactionEntry
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        public uint[] ReputationRaceMask;
+        public ulong[] ReputationRaceMask;
         public string Name;
         public string Description;
         public uint ID;

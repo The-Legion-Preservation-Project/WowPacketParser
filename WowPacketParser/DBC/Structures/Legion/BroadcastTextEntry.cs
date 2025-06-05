@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using DBFileReaderLib.Attributes;
 
 namespace WowPacketParser.DBC.Structures.Legion
 {
@@ -6,6 +7,8 @@ namespace WowPacketParser.DBC.Structures.Legion
 
     public sealed class BroadcastTextEntry
     {
+        [Index(true)]
+        public uint ID;
         public string Text;
         public string Text1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
@@ -15,8 +18,8 @@ namespace WowPacketParser.DBC.Structures.Legion
         public ushort EmotesID;
         public byte LanguageID;
         public byte Flags;
-        public uint ConditionID;
+        public int ConditionID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
-        public uint[] SoundEntriesID;
+        public uint[] SoundKitID;
     }
 }

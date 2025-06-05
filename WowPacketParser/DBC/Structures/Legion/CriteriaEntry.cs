@@ -1,14 +1,18 @@
-﻿namespace WowPacketParser.DBC.Structures.Legion
+﻿using DBFileReaderLib.Attributes;
+
+namespace WowPacketParser.DBC.Structures.Legion
 {
     [DBFile("Criteria")]
     public sealed class CriteriaEntry
     {
-        public uint Asset;
-        public uint StartAsset;
-        public uint FailAsset;
+        [Index(true)]
+        public uint ID;
+        public int Asset;
+        public int StartAsset;
+        public int FailAsset;
+        public uint ModifierTreeId;
         public ushort StartTime;
-        public ushort ModifiertTreeId;
-        public ushort EligibilityWorldStateID;
+        public short EligibilityWorldStateID;
         public byte Type;
         public byte StartEvent;
         public byte FailEvent;
