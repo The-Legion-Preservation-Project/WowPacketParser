@@ -52,6 +52,7 @@ namespace WowPacketParser.Enums
         TillLegion                        = Legion | TillWarlordsOfDraenor,
         TillBattleForAzeroth              = BattleForAzeroth | TillLegion,
         TillShadowlands                   = Shadowlands | TillBattleForAzeroth,
+        TillShadowlandsNoLegion           = TillWarlordsOfDraenor | BattleForAzeroth | Shadowlands,
         TillDragonflight                  = Dragonflight | TillShadowlands,
         TillTheWarWithin                  = TheWarWithin | TillDragonflight,
 
