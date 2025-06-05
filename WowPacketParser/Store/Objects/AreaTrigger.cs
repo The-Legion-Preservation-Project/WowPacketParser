@@ -52,8 +52,8 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("ShapeData", TargetedDatabaseFlag.TillShadowlands, 8, true)] // kept in TargetedDatabase.Shadowlands to preserve data for non-spell areatriggers
         public float?[] ShapeData = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-        [DBFieldName("SpellForVisuals", TargetedDatabaseFlag.TillShadowlands, false, false, true)]
-        public uint? SpellForVisuals;
+        [DBFieldName("SpellForVisuals", TargetedDatabaseFlag.TillShadowlandsNoLegion, false, false, true)]
+        public int? SpellForVisuals;
 
         [DBFieldName("Comment")]
         public string Comment;

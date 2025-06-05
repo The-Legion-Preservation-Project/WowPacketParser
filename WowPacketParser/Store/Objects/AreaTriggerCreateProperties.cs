@@ -48,8 +48,8 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("DecalPropertiesId")]
         public uint? DecalPropertiesId = 0;
 
-        [DBFieldName("SpellForVisuals", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.CataClassic, false, false, true)]
-        public uint? SpellForVisuals;
+        [DBFieldName("SpellForVisuals", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.CataClassic, false, false, true)]
+        public int? SpellForVisuals;
 
         [DBFieldName("TimeToTarget", TargetedDatabaseFlag.TillDragonflight)]
         public uint? TimeToTarget = 0;
@@ -84,7 +84,7 @@ namespace WowPacketParser.Store.Objects
         public override void LoadValuesFromUpdateFields()
         {
             spellId             = (uint)AreaTriggerData.SpellID;
-            SpellForVisuals     = (uint)AreaTriggerData.SpellForVisuals;
+            SpellForVisuals     = AreaTriggerData.SpellForVisuals;
             DecalPropertiesId   = AreaTriggerData.DecalPropertiesID;
             TimeToTarget        = AreaTriggerData.TimeToTarget;
             TimeToTargetScale   = AreaTriggerData.TimeToTargetScale;
@@ -177,8 +177,8 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("DecalPropertiesId")]
         public uint? DecalPropertiesId = 0;
 
-        [DBFieldName("SpellForVisuals", TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.CataClassic, false, false, true)]
-        public uint? SpellForVisuals;
+        [DBFieldName("SpellForVisuals", TargetedDatabaseFlag.Legion | TargetedDatabaseFlag.SinceDragonflight | TargetedDatabaseFlag.CataClassic, false, false, true)]
+        public int? SpellForVisuals;
 
         [DBFieldName("TimeToTarget", TargetedDatabaseFlag.TillDragonflight)]
         public uint? TimeToTarget = 0;
