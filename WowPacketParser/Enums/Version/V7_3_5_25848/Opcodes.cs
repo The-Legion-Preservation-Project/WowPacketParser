@@ -284,6 +284,7 @@ namespace WowPacketParser.Enums.Version.V7_3_5_25848
             {Opcode.CMSG_GARRISON_START_MISSION, 0x3300},
             {Opcode.CMSG_GARRISON_SWAP_BUILDINGS, 0x32BD},
             {Opcode.CMSG_GENERATE_RANDOM_CHARACTER_NAME, 0x35E7},
+            {Opcode.CMSG_GET_ACCOUNT_CHARACTER_LIST, 0x36B6},
             {Opcode.CMSG_GET_GARRISON_INFO, 0x32B2},
             {Opcode.CMSG_GET_ITEM_PURCHASE_DATA, 0x3533},
             {Opcode.CMSG_GET_LANDING_PAGE_SHIPMENTS, 0x32DF},
